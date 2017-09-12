@@ -2,8 +2,9 @@ import {StyleSheet, View, Text, Dimensions} from 'react-native';
 import React, {Component} from 'react';
 import {Icon} from 'native-base';
 import {PagerTabIndicator, IndicatorViewPager, PagerTitleIndicator, PagerDotIndicator} from 'rn-viewpager';
+import Profile from './Profile';
 
-export default class ViewPagerPage extends Component {
+export default class Navigaion extends Component {
   render() {
     const Dimensi = Dimensions.get('window');
     const {height} = Dimensi;
@@ -14,14 +15,13 @@ export default class ViewPagerPage extends Component {
                     indicator={this._renderTabIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                        <Text>page one</Text>
+                    <Text> Page One</Text>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
-                        <Text>page two</Text>
+                    <Text>page two</Text>
                     </View>
                     <View style={{backgroundColor:'#1AA094'}}>
-                        <Text>page three</Text>
-                        <Icon name='home' />
+                        <Profile /> 
                     </View>
                 </IndicatorViewPager>
             </View>

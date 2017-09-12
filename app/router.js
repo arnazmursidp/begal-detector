@@ -2,7 +2,6 @@ import React from 'react';
 import {Scene, Router} from 'react-native-router-flux';
 
 import Login from './component/Login';
-import FooterExample from './component/Footer';
 import Maps from './component/Maps'
 
 
