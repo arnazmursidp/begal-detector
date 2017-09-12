@@ -5,8 +5,26 @@ let { width, height } = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
 const LATITUDE = 0;
 const LONGITUDE = 0;
-const LATITUDE_DELTA = 0.0922;
+const LATITUDE_DELTA = 0.030;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+
+const PRELOAD_LONGLAT = {
+  region:
+  [
+    {
+      latitude: -6.899344,
+      longitude: 107.604114,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA
+    },
+    {
+      latitude: -6.900265,
+      longitude: 107.598440,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA
+    }
+  ]
+  }
 export default class MapExample extends Component {
   constructor() {
     super();
@@ -16,7 +34,15 @@ export default class MapExample extends Component {
         longitude: LONGITUDE,
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA,
+      },
+      default: {
+        latitude: LATITUDE,
+        longitude: LONGITUDE,
+        latitudeDelta: LATITUDE_DELTA,
+        longitudeDelta: LONGITUDE_DELTA,
       }
+
+
     };
   }
   componentDidMount() {
@@ -24,6 +50,12 @@ export default class MapExample extends Component {
       position => {
         this.setState({
           region: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            latitudeDelta: LATITUDE_DELTA,
+            longitudeDelta: LONGITUDE_DELTA,
+          },
+          default: {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
             latitudeDelta: LATITUDE_DELTA,
@@ -60,9 +92,16 @@ export default class MapExample extends Component {
         onRegionChange={ region => this.setState({region}) }
         onRegionChangeComplete={ region => this.setState({region}) }
       >
-        <MapView.Marker
-          coordinate={ this.state.region }
+
+      {PRELOAD_LONGLAT.region.map( coordinate => 
+        <MapView.Circle 
+            center={{latitude: coordinate.latitude, longitude: coordinate.longitude}}
+            radius={1000}
+            fillColor='rgba(255, 0, 0, 0.2)'
+            strokeColor='rgba(255, 0, 0, 0.2)'
         />
+      )}
+
       </MapView>
     );
   }
