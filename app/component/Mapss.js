@@ -18,8 +18,38 @@ const PRELOAD_LONGLAT = {
       longitudeDelta: LONGITUDE_DELTA
     },
     {
-      latitude: -6.900265,
-      longitude: 107.598440,
+      latitude: -6.905039,
+      longitude: 107.643864,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA
+    },
+    {
+      latitude: -6.920258,
+      longitude: 107.599917,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA
+    },
+    {
+      latitude: -6.997401,
+      longitude: 107.531079,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA
+    },
+    {
+      latitude: -6.929927,
+      longitude: 107.648146,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA
+    },
+    {
+      latitude: -6.936861,
+      longitude: 107.730417,
+      latitudeDelta: LATITUDE_DELTA,
+      longitudeDelta: LONGITUDE_DELTA
+    },
+    {
+      latitude: -6.893353,
+      longitude: 107.677911,
       latitudeDelta: LATITUDE_DELTA,
       longitudeDelta: LONGITUDE_DELTA
     }

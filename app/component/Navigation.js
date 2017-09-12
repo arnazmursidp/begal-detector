@@ -21,9 +21,6 @@ export default class Navigaion extends Component {
                     <View style={{backgroundColor:'cornflowerblue'}}>
                     <Mapss />
                     </View>
-                    <View style={{backgroundColor:'#1AA094'}}>
-                        <Profile /> 
-                    </View>
                 </IndicatorViewPager>
             </View>
         );
@@ -38,11 +35,7 @@ export default class Navigaion extends Component {
                 text: 'Maps',
                 iconSource: require('../imgs/map_normal.png'),
                 selectedIconSource: require('../imgs/map_click.png')
-            },{
-                text: 'Profile',
-                iconSource: require('../imgs/user_normal.png'),
-                selectedIconSource: require('../imgs/user_click.png')
-        }];
+            }];
         return <PagerTabIndicator tabs={tabs} />;
     }
 
