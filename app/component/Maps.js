@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Content, Footer, FooterTab, Button, Icon, Text, View } from 'native-base';
-import FooterExample from './Footer';
+import Navigation from './Navigation';
 import Header from './Header';
 
 export default class Maps extends Component {
@@ -9,7 +9,7 @@ export default class Maps extends Component {
       <View>
         <Header />
         <Content />
-        <FooterExample />
+        <Navigation />
       </View>
     );
   }
