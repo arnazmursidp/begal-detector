@@ -123,13 +123,16 @@ export default class MapExample extends Component {
         onRegionChangeComplete={ region => this.setState({region}) }
       >
 
-
-        <MapView.Circle 
-            center={{latitude: this.state.default.latitude, longitude: this.state.default.longitude}}
-            radius={1000}
-            fillColor='rgba(255, 0, 0, 0.2)'
-            strokeColor='rgba(255, 0, 0, 0.2)'
+      { PRELOAD_LONGLAT.region.map((coordinate, i) => 
+          <MapView.Circle 
+          key={i}
+          center={{latitude: coordinate.latitude, longitude: coordinate.longitude}}
+          radius={1000}
+          fillColor='rgba(255, 0, 0, 0.2)'
+          strokeColor='rgba(255, 0, 0, 0.2)'
         />
+      )
+      }
       </MapView>
     );
   }
