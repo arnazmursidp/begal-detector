@@ -8,23 +8,7 @@ const LONGITUDE = 0;
 const LATITUDE_DELTA = 0.030;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
-const PRELOAD_LONGLAT = {
-  region:
-  [
-    {
-      latitude: -6.899344,
-      longitude: 107.604114,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    },
-    {
-      latitude: -6.900265,
-      longitude: 107.598440,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    }
-  ]
-  }
+
 export default class MapExample extends Component {
   constructor() {
     super();
@@ -93,15 +77,13 @@ export default class MapExample extends Component {
         onRegionChangeComplete={ region => this.setState({region}) }
       >
 
-      {PRELOAD_LONGLAT.region.map( coordinate => 
+
         <MapView.Circle 
-            center={{latitude: coordinate.latitude, longitude: coordinate.longitude}}
+            center={{latitude: this.state.default.latitude, longitude: this.state.default.longitude}}
             radius={1000}
             fillColor='rgba(255, 0, 0, 0.2)'
             strokeColor='rgba(255, 0, 0, 0.2)'
         />
-      )}
-
       </MapView>
     );
   }

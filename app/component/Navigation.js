@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 import {Icon} from 'native-base';
 import {PagerTabIndicator, IndicatorViewPager, PagerTitleIndicator, PagerDotIndicator} from 'rn-viewpager';
 import Profile from './Profile';
-import Mapss from './Mapss';    
+import Mapss from './Mapss';  
+import Home from './Home';
 
 export default class Navigaion extends Component {
   render() {
@@ -16,13 +17,10 @@ export default class Navigaion extends Component {
                     indicator={this._renderTabIndicator()}
                 >
                     <View style={{backgroundColor:'cadetblue'}}>
-                    <Text> Page One</Text>
+                    <Home />
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
                     <Mapss />
-                    </View>
-                    <View style={{backgroundColor:'#1AA094'}}>
-                        <Profile /> 
                     </View>
                 </IndicatorViewPager>
             </View>
@@ -38,11 +36,7 @@ export default class Navigaion extends Component {
                 text: 'Maps',
                 iconSource: require('../imgs/map_normal.png'),
                 selectedIconSource: require('../imgs/map_click.png')
-            },{
-                text: 'Profile',
-                iconSource: require('../imgs/user_normal.png'),
-                selectedIconSource: require('../imgs/user_click.png')
-        }];
+            }];
         return <PagerTabIndicator tabs={tabs} />;
     }
 

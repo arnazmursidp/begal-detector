@@ -11,7 +11,7 @@ const Routing = () => (
     <Router>
     
       <Scene key="root">
-        <Scene key="login" component={Login} title="Login" hideNavBar/>
+
         <Scene key="maps" component={Maps} title="Maps" hideNavBar/>
       </Scene>
     
