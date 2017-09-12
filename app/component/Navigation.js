@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {Icon} from 'native-base';
 import {PagerTabIndicator, IndicatorViewPager, PagerTitleIndicator, PagerDotIndicator} from 'rn-viewpager';
 import Profile from './Profile';
+import Mapss from './Mapss';    
 
 export default class Navigaion extends Component {
   render() {
@@ -18,7 +19,7 @@ export default class Navigaion extends Component {
                     <Text> Page One</Text>
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
-                    <Text>page two</Text>
+                    <Mapss />
                     </View>
                     <View style={{backgroundColor:'#1AA094'}}>
                         <Profile /> 

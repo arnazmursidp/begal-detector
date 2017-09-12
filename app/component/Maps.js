@@ -3,6 +3,7 @@ import { Container, Content, Footer, FooterTab, Button, Icon, Text, View } from 
 import Navigation from './Navigation';
 import Header from './Header';
 
+
 export default class Maps extends Component {
   render() {
     return (

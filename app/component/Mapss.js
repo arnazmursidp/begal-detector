@@ -1,5 +1,6 @@
 import MapView from 'react-native-maps';
 import React, { Component } from 'react';
+import {Dimensions, StyleSheet} from 'react-native';
 
 export default class Maps extends Component {
   render() {
