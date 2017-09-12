@@ -7,8 +7,6 @@ import {
 } from 'react-native';
 import {Container, Content} from 'native-base';
 import Routing  from './app/router';
-import {AppRegistry} from 'react-native';
-
 
 export default class BegalDetector extends Component {
   render() {
