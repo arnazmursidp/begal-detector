@@ -5,6 +5,7 @@ import {PagerTabIndicator, IndicatorViewPager, PagerTitleIndicator, PagerDotIndi
 import Profile from './Profile';
 import Mapss from './Mapss';  
 import Home from './Home';
+import Danger from './Danger/Danger';
 
 export default class Navigaion extends Component {
   render() {
@@ -22,6 +23,9 @@ export default class Navigaion extends Component {
                     <View style={{backgroundColor:'cornflowerblue'}}>
                     <Mapss />
                     </View>
+                    <View style={{backgroundColor:'#96281B'}}>
+                    <Danger />    
+                    </View>
                 </IndicatorViewPager>
             </View>
         );
@@ -36,6 +40,10 @@ export default class Navigaion extends Component {
                 text: 'Maps',
                 iconSource: require('../imgs/map_normal.png'),
                 selectedIconSource: require('../imgs/map_click.png')
+            }, {
+                text: 'Danger',
+                iconSource: require('../imgs/warning_normal.png'),
+                selectedIconSource: require('../imgs/warning_click.png')
             }];
         return <PagerTabIndicator tabs={tabs} />;
     }

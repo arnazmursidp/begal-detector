@@ -3,7 +3,7 @@ import { Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
 export default class HeaderTop extends Component {
   render() {
     return (
-        <Header>
+        <Header color={'#96281B'}>
           <Body>
             <Title>Begal Detector</Title>
           </Body>
