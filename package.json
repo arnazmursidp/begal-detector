@@ -7,11 +7,12 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"axios": "^0.16.2",
 		"native-base": "^2.3.1",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.48.3",
-		"react-native-router-flux": "^4.0.0-beta.21",
 		"react-native-maps": "^0.16.3",
+		"react-native-router-flux": "^4.0.0-beta.21",
 		"rn-viewpager": "^1.2.4"
 	},
 	"devDependencies": {
@@ -24,5 +25,3 @@
 		"preset": "react-native"
 	}
 }
-
-
