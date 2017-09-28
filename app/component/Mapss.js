@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { 
+  StyleSheet,
+  View,
+  Dimensions,
+  AsyncStorage
+ } from 'react-native';
+
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import axios from 'axios';
+
 let { width, height } = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
 const LATITUDE = 0;
@@ -8,53 +16,6 @@ const LONGITUDE = 0;
 const LATITUDE_DELTA = 0.030;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
-const PRELOAD_LONGLAT = {
-  region:
-  [
-    {
-      latitude: -6.899344,
-      longitude: 107.604114,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    },
-    {
-      latitude: -6.905039,
-      longitude: 107.643864,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    },
-    {
-      latitude: -6.920258,
-      longitude: 107.599917,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    },
-    {
-      latitude: -6.997401,
-      longitude: 107.531079,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    },
-    {
-      latitude: -6.929927,
-      longitude: 107.648146,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    },
-    {
-      latitude: -6.936861,
-      longitude: 107.730417,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    },
-    {
-      latitude: -6.893353,
-      longitude: 107.677911,
-      latitudeDelta: LATITUDE_DELTA,
-      longitudeDelta: LONGITUDE_DELTA
-    }
-  ]
-  }
 export default class MapExample extends Component {
   constructor() {
     super();
@@ -70,12 +31,22 @@ export default class MapExample extends Component {
         longitude: LONGITUDE,
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA,
-      }
-
-
+      },
+      locations: [],
     };
   }
   componentDidMount() {
+    AsyncStorage.getItem('accesToken')
+    .then(token => {
+      axios({
+        method: 'get',
+        url: 'http://c362ae30.ngrok.io/api/locations',
+        headers: {'Authorization': `Bearer ${token}`}
+      })
+      .then(response => this.setState({location: response.data.data}));
+    })
+    .catch(error => console.log('error getting token', error))
+    
     navigator.geolocation.getCurrentPosition(
       position => {
         this.setState({
@@ -108,6 +79,8 @@ export default class MapExample extends Component {
         });
       }
     );
+
+
   }
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchId);
@@ -123,10 +96,10 @@ export default class MapExample extends Component {
         onRegionChangeComplete={ region => this.setState({region}) }
       >
 
-      { PRELOAD_LONGLAT.region.map((coordinate, i) => 
+      { this.state.locations.map((coordinate, i) => 
           <MapView.Circle 
           key={i}
-          center={{latitude: coordinate.latitude, longitude: coordinate.longitude}}
+          center={{latitude: coordinate.lat, longitude: coordinate.lng}}
           radius={1000}
           fillColor='rgba(255, 0, 0, 0.2)'
           strokeColor='rgba(255, 0, 0, 0.2)'
