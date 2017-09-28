@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, List, ListItem, Text, Separator, Card,CardItem,Left, Body   } from 'native-base';
-
 const roads = {
   jalan_besar: [
     'Pasopati jembatan layang',
