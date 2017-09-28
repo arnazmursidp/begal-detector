@@ -89,14 +89,18 @@ export default class MapExample extends Component {
     let location = [];
     if(this.state.locations.length > 0){
       
-      this.state.locations.map((coordinate, i) => 
-      location =  <MapView.Circle 
+      this.state.locations.map((coordinate, i) =>{ 
+      console.log('ini coordinate', coordinate.lat);
+      location =  (
+        <MapView.Circle 
         key={i}
-        center={{latitude: parseInt(coordinate.lat), longitude: parseInt(coordinate.lng)}}
+        center={{latitude: coordinate.lat, longitude: coordinate.lng}}
         radius={1000}
         fillColor='rgba(255, 0, 0, 0.2)'
         strokeColor='rgba(255, 0, 0, 0.2)'
       />
+    )
+    }
     )
     
     }
