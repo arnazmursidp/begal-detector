@@ -43,7 +43,7 @@ export default class MapExample extends Component {
         url: 'http://c362ae30.ngrok.io/api/locations',
         headers: {'Authorization': `Bearer ${token}`}
       })
-      .then(response => this.setState({location: response.data.data}));
+      .then(response => this.setState({locations: response.data.data}));
     })
     .catch(error => console.log('error getting token', error))
     
@@ -86,6 +86,20 @@ export default class MapExample extends Component {
     navigator.geolocation.clearWatch(this.watchId);
   }
   render() {
+    let location = [];
+    if(this.state.locations.length > 0){
+      
+      this.state.locations.map((coordinate, i) => 
+      location =  <MapView.Circle 
+        key={i}
+        center={{latitude: parseInt(coordinate.lat), longitude: parseInt(coordinate.lng)}}
+        radius={1000}
+        fillColor='rgba(255, 0, 0, 0.2)'
+        strokeColor='rgba(255, 0, 0, 0.2)'
+      />
+    )
+    
+    }
     return (
       <MapView
         provider={ PROVIDER_GOOGLE }
@@ -96,16 +110,7 @@ export default class MapExample extends Component {
         onRegionChangeComplete={ region => this.setState({region}) }
       >
 
-      { this.state.locations.map((coordinate, i) => 
-          <MapView.Circle 
-          key={i}
-          center={{latitude: coordinate.lat, longitude: coordinate.lng}}
-          radius={1000}
-          fillColor='rgba(255, 0, 0, 0.2)'
-          strokeColor='rgba(255, 0, 0, 0.2)'
-        />
-      )
-      }
+      {location}
       </MapView>
     );
   }
