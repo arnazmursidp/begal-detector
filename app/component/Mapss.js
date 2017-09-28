@@ -5,7 +5,7 @@ import {
   Dimensions,
   AsyncStorage
  } from 'react-native';
-
+import Actions from 'react-native-router-flux';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import axios from 'axios';
 
@@ -20,6 +20,8 @@ export default class MapExample extends Component {
   constructor() {
     super();
     this.state = {
+      long: LONGITUDE,
+      lat: LATITUDE,
       region: {
         latitude: LATITUDE,
         longitude: LONGITUDE,
@@ -70,6 +72,8 @@ export default class MapExample extends Component {
     this.watchID = navigator.geolocation.watchPosition(
       position => {
         this.setState({
+          long: position.coords.longitude,
+          lat: position.coords.latitude,
           region: {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
@@ -85,12 +89,12 @@ export default class MapExample extends Component {
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchId);
   }
+  
   render() {
     let location = [];
     if(this.state.locations.length > 0){
       
-      this.state.locations.map((coordinate, i) =>{ 
-      console.log('ini coordinate', coordinate.lat);
+      this.state.locations.map((coordinate, i) =>{
       location =  (
         <MapView.Circle 
         key={i}
@@ -113,7 +117,13 @@ export default class MapExample extends Component {
         onRegionChange={ region => this.setState({region}) }
         onRegionChangeComplete={ region => this.setState({region}) }
       >
-
+        <MapView.Marker
+          coordinate={{
+            latitude: this.state.lat,
+            longitude: this.state.long
+          }}
+          title="REPORT"
+          onPress={() => { }}/>
       {location}
       </MapView>
     );
