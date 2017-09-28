@@ -1,0 +1,81 @@
+- es6-weak-map@2.0.2 node_modules/es6-weak-map
+strip-bom@3.0.0 node_modules/eslint/node_modules/strip-bom -> node_modules/eslint-plugin-import/node_modules/strip-bom
+- ansi-escapes@1.4.0 node_modules/eslint/node_modules/ansi-escapes
+- ansi-styles@2.2.1 node_modules/eslint/node_modules/ansi-styles
+- chalk@1.1.3 node_modules/eslint/node_modules/chalk
+- figures@1.7.0 node_modules/eslint/node_modules/figures
+- onetime@1.1.0 node_modules/eslint/node_modules/onetime
+- run-async@0.1.0 node_modules/eslint/node_modules/run-async
+- rx-lite@3.1.2 node_modules/eslint/node_modules/rx-lite
+- event-emitter@0.3.5 node_modules/event-emitter
+- es6-set@0.1.5 node_modules/es6-set
+- es6-map@0.1.5 node_modules/es6-map
+- escope@3.6.0 node_modules/escope
+- exit-hook@1.1.1 node_modules/exit-hook
+- restore-cursor@1.0.1 node_modules/eslint/node_modules/restore-cursor
+- cli-cursor@1.0.2 node_modules/eslint/node_modules/cli-cursor
+- generate-function@2.0.0 node_modules/generate-function
+- interpret@1.0.4 node_modules/interpret
+- is-property@1.0.2 node_modules/is-property
+- generate-object-property@1.2.0 node_modules/generate-object-property
+- jsonpointer@4.0.1 node_modules/jsonpointer
+- is-my-json-valid@2.16.1 node_modules/is-my-json-valid
+- mute-stream@0.0.5 node_modules/readline2/node_modules/mute-stream
+- readline2@1.0.1 node_modules/readline2
+- inquirer@0.12.0 node_modules/eslint/node_modules/inquirer
+- rechoir@0.6.2 node_modules/rechoir
+- shelljs@0.7.8 node_modules/shelljs
+- ansi-styles@2.2.1 node_modules/table/node_modules/ansi-styles
+- chalk@1.1.3 node_modules/table/node_modules/chalk
+- user-home@2.0.0 node_modules/user-home
+strip-ansi@4.0.0 node_modules/table/node_modules/string-width/node_modules/strip-ansi -> node_modules/eslint/node_modules/strip-ansi
+BegalDetector@0.0.1 /home/maulana/Documents/Refactory/hackday/begal-detector
+├─┬ eslint@4.7.2 
+│ ├─┬ ajv@5.2.3 
+│ │ ├── fast-deep-equal@1.0.0 
+│ │ └── json-schema-traverse@0.3.1 
+│ ├── cross-spawn@5.1.0 
+│ ├─┬ debug@3.1.0 
+│ │ └── ms@2.0.0 
+│ ├── eslint-scope@3.7.1 
+│ ├── functional-red-black-tree@1.0.1 
+│ ├── pluralize@7.0.0 
+│ ├── progress@2.0.0 
+│ ├─┬ strip-ansi@4.0.0
+│ │ └── ansi-regex@3.0.0 
+│ └─┬ table@4.0.2 
+│   ├── UNMET PEER DEPENDENCY ajv@5.2.3
+│   ├── ajv-keywords@2.1.0 
+│   ├─┬ slice-ansi@1.0.0 
+│   │ └── is-fullwidth-code-point@2.0.0 
+│   └─┬ string-width@2.1.1
+│     └── strip-ansi@4.0.0 
+├── eslint-config-standard@10.2.1 
+├─┬ eslint-plugin-import@2.7.0 
+│ ├── contains-path@0.1.0 
+│ ├─┬ debug@2.6.9 
+│ │ └── ms@2.0.0 
+│ ├─┬ doctrine@1.5.0 
+│ │ └── isarray@1.0.0 
+│ ├─┬ eslint-import-resolver-node@0.3.1 
+│ │ └─┬ debug@2.6.9 
+│ │   └── ms@2.0.0 
+│ ├─┬ eslint-module-utils@2.1.1 
+│ │ ├─┬ debug@2.6.9 
+│ │ │ └── ms@2.0.0 
+│ │ └─┬ pkg-dir@1.0.0 
+│ │   └── find-up@1.1.2 
+│ ├─┬ has@1.0.1 
+│ │ └── function-bind@1.1.1 
+│ ├── lodash.cond@4.5.2 
+│ └─┬ read-pkg-up@2.0.0 
+│   └─┬ read-pkg@2.0.0 
+│     ├── load-json-file@2.0.0 
+│     └── path-type@2.0.0 
+├── UNMET PEER DEPENDENCY eslint-plugin-jsx-a11y@^5.1.1
+├─┬ eslint-plugin-node@5.1.1 
+│ └── semver@5.3.0 
+├── eslint-plugin-promise@3.5.0 
+├── UNMET PEER DEPENDENCY eslint-plugin-react@^7.1.0
+└── eslint-plugin-standard@3.0.1 
+

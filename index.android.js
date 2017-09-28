@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View
-} from 'react-native';
-import {Container, Content} from 'native-base';
-import Routing  from './app/router';
+} from 'react-native'
+import {Container, Content} from 'native-base'
+import Routing from './app/router'
 
 export default class BegalDetector extends Component {
-  render() {
+  render () {
     return (
-      
-        <Routing />
 
-    );
+      <Routing />
+
+    )
   }
 }
 
-AppRegistry.registerComponent('BegalDetector', () => BegalDetector);
+AppRegistry.registerComponent('BegalDetector', () => BegalDetector)
