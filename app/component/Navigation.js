@@ -17,14 +17,14 @@ export default class Navigaion extends Component {
                     style={{height:height-75, flexDirection: 'column' }}
                     indicator={this._renderTabIndicator()}
                 >
-                    <View style={{backgroundColor:'cadetblue'}}>
-                    <Home />
+                    <View style={{backgroundColor:'#96281B'}}>
+                    <Danger />
                     </View>
                     <View style={{backgroundColor:'cornflowerblue'}}>
                     <Mapss />
                     </View>
-                    <View style={{backgroundColor:'#96281B'}}>
-                    <Danger />    
+                    <View style={{backgroundColor:'cadetblue'}}>  
+                    <Home />  
                     </View>
                 </IndicatorViewPager>
             </View>
@@ -32,18 +32,18 @@ export default class Navigaion extends Component {
     }
 
     _renderTabIndicator() {
-        let tabs = [{
-                text: 'Home',
-                iconSource: require('../imgs/home_normal.png'),
-                selectedIconSource: require('../imgs/home_click.png')
+        let tabs = [ {
+                text: 'Danger',
+                iconSource: require('../imgs/warning_normal.png'),
+                selectedIconSource: require('../imgs/warning_click.png')
             },{
                 text: 'Maps',
                 iconSource: require('../imgs/map_normal.png'),
                 selectedIconSource: require('../imgs/map_click.png')
             }, {
-                text: 'Danger',
-                iconSource: require('../imgs/warning_normal.png'),
-                selectedIconSource: require('../imgs/warning_click.png')
+                text: 'Home',
+                iconSource: require('../imgs/home_normal.png'),
+                selectedIconSource: require('../imgs/home_click.png')
             }];
         return <PagerTabIndicator tabs={tabs} />;
     }
