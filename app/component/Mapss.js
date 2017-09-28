@@ -154,7 +154,8 @@ export default class MapExample extends Component {
             latitude: this.state.lat,
             longitude: this.state.long
           }}
-          title="REPORT"
+          title="Your Location"
+          description={this.state.long + ", " + this.state.lat}
           onPress={() => { this.areYouSure(data) }}/>
       {location}
       </MapView>
