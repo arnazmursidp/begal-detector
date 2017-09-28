@@ -3,9 +3,9 @@ import {
   StyleSheet,
   View,
   Dimensions,
-  AsyncStorage
+  AsyncStorage,
+  Alert
  } from 'react-native';
-import Actions from 'react-native-router-flux';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import axios from 'axios';
 
@@ -37,6 +37,7 @@ export default class MapExample extends Component {
       locations: [],
     };
   }
+  
   componentDidMount() {
     AsyncStorage.getItem('accesToken')
     .then(token => {
@@ -84,14 +85,45 @@ export default class MapExample extends Component {
       }
     );
 
-
   }
   componentWillUnmount() {
     navigator.geolocation.clearWatch(this.watchId);
   }
   
+  areYouSure(data){
+    Alert.alert(
+      "Warning!",
+      "Your data will be uploaded to Police's database!", 
+      [
+        {text: 'Cancel'},
+        {text: 'OK', onPress: () => { this.createData(data) }}
+      ],
+      { cancelable: false }
+    );
+  }
+
+  createData(data){
+    console.log("DATAAA", data)
+    AsyncStorage.getItem('accesToken')
+    .then(token => {
+      axios({
+        method: 'post',
+        url: 'http://c362ae30.ngrok.io/api/locations',
+        headers: {'Authorization': `Bearer ${token}`},
+        data: data
+      })
+      .then(response => {console.log("response", response.data.meta.success)});
+    })
+    .catch((error) => {console.log("ERROR", error)})
+  }
+
   render() {
     let location = [];
+    const data = {
+      information: 'hehe',
+      lng: this.state.long,
+      lat: this.state.lat
+    }
     if(this.state.locations.length > 0){
       
       this.state.locations.map((coordinate, i) =>{
@@ -123,7 +155,7 @@ export default class MapExample extends Component {
             longitude: this.state.long
           }}
           title="REPORT"
-          onPress={() => { }}/>
+          onPress={() => { this.areYouSure(data) }}/>
       {location}
       </MapView>
     );
