@@ -18,3 +18,5 @@ function mapsReducer(state = initialState, action){
         default: return state;
     }
 }
+
+export default mapsReducer;
