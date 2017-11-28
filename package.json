@@ -13,6 +13,12 @@
 		"react-native": "0.48.3",
 		"react-native-maps": "^0.16.3",
 		"react-native-router-flux": "^4.0.0-beta.21",
+		"react-redux": "^5.0.6",
+		"redux": "^3.7.2",
+		"redux-immutable": "^4.0.0",
+		"redux-logger": "^3.0.6",
+		"redux-thunk": "^2.2.0",
+		"reselect": "^3.0.1",
 		"rn-viewpager": "^1.2.4"
 	},
 	"devDependencies": {
