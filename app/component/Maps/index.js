@@ -13,9 +13,9 @@ import * as actions from './actions';
 //import selectors
 import * as selectors from './selectors';
 
-export default class Maps extends Component {
+class Maps extends Component {
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.login();
   }
 
