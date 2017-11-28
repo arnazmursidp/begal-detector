@@ -4,8 +4,8 @@ import {
   AsyncStorage
 } from 'react-native'
 import { Content } from 'native-base'
-import Navigation from './Navigation'
-import Header from './Header'
+import Navigation from '../Navigation'
+import Header from '../Header'
 import axios from 'axios'
 
 export default class Maps extends Component {
