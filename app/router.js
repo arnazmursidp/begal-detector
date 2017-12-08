@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Scene, Router} from 'react-native-router-flux';
 
 // redux
@@ -9,16 +9,16 @@ import { store } from './store';
 // import component;
 import Maps from './component/Maps'
 
-
-
-const Routing = () => ( 
-  <Provider store={store}>
-    <RouterWithRedux>
-      <Scene key="root">
-        <Scene key="maps" component={Maps} title="Maps" hideNavBar/>
-      </Scene>
-    </RouterWithRedux>
-  </Provider>
-)
-
-export default Routing; 
+export default class Routing extends Component{
+  render(){
+    return(
+      <Provider store={store}>
+        <RouterWithRedux>
+          <Scene key="root">
+            <Scene key="maps" component={Maps} title="Maps" hideNavBar/>
+          </Scene>
+        </RouterWithRedux>
+      </Provider>
+    )
+  }
+}
